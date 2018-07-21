@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreReact", "CoreReact\CoreReact.csproj", "{36CD3BFA-BA2F-4F58-94CA-3852A63B863B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46C73B65-6A5D-4F41-AAD3-8107676F7FB5}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreReact.Northwind", "CoreReact.Northwind\CoreReact.Northwind.csproj", "{7D5B2684-CE88-4D2A-B27B-D2ECB6050FB6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreReact.Db.Tests", "CoreReact.Db.Tests\CoreReact.Db.Tests.csproj", "{C2C08425-B5B6-45B3-A3EB-6B845032E3C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreReact.Chinook", "CoreReact.Chinook\CoreReact.Chinook.csproj", "{682FA2B7-881E-4EB5-B558-36B289A6482B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36CD3BFA-BA2F-4F58-94CA-3852A63B863B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CD3BFA-BA2F-4F58-94CA-3852A63B863B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CD3BFA-BA2F-4F58-94CA-3852A63B863B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CD3BFA-BA2F-4F58-94CA-3852A63B863B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D5B2684-CE88-4D2A-B27B-D2ECB6050FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5B2684-CE88-4D2A-B27B-D2ECB6050FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5B2684-CE88-4D2A-B27B-D2ECB6050FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5B2684-CE88-4D2A-B27B-D2ECB6050FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2C08425-B5B6-45B3-A3EB-6B845032E3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2C08425-B5B6-45B3-A3EB-6B845032E3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2C08425-B5B6-45B3-A3EB-6B845032E3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2C08425-B5B6-45B3-A3EB-6B845032E3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{682FA2B7-881E-4EB5-B558-36B289A6482B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{682FA2B7-881E-4EB5-B558-36B289A6482B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{682FA2B7-881E-4EB5-B558-36B289A6482B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{682FA2B7-881E-4EB5-B558-36B289A6482B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27E894CB-C5A3-44B0-9F66-29983430C06B}
+	EndGlobalSection
+EndGlobal

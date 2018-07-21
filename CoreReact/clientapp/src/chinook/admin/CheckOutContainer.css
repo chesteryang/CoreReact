@@ -1,0 +1,10 @@
+.orderDetails tbody {
+    display:block;
+    max-height:400px;
+    overflow-y:scroll;
+}
+.orderDetails thead, .orderDetails tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}

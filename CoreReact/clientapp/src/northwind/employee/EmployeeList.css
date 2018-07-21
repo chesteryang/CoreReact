@@ -1,0 +1,31 @@
+.control-label{
+    margin-left: 10%;
+}
+
+.btnEdit{
+    margin-top: 0;
+}
+
+.invalidInput{
+    border: 1px solid red;
+}
+
+.validInput{
+    border: 1px solid black;    
+}
+
+.employee-form button{
+    margin-right: 10px;
+}
+
+.northwindEmployeeList tbody {
+    display:block;
+    max-height:500px;
+    overflow-y:scroll;
+}
+
+.northwindEmployeeList thead, .northwindEmployeeList tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
