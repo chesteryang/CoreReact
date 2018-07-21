@@ -51,6 +51,7 @@ namespace CoreReact
                 // Set the comments path for the Swagger JSON and UI.
                 var basePath = AppContext.BaseDirectory;
                 var xmlPath = Path.Combine(basePath, "CoreReact.xml");
+                c.EnableAnnotations();
                 c.IncludeXmlComments(xmlPath);
             });
 
