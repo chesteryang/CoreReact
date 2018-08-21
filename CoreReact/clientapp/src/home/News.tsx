@@ -25,6 +25,13 @@ class NewsComponent extends React.Component<INewsState & IDispatchFromProps, any
         this.props.getNews()
     }
 
+    replaceHttp = (url: string) => {
+        if(url) {
+            url = url.replace('http://', 'https://')
+        }
+        return url
+    }
+
     render(){
         const { loading, news } = this.props
         const title = <h2 className="topnewsHeader">News</h2> 
@@ -50,7 +57,7 @@ class NewsComponent extends React.Component<INewsState & IDispatchFromProps, any
                                         <span className="newsSource">{article.source.name}</span>
                                         <span className="newsDate">{new Date(article.publishedAt).toLocaleDateString()}</span>
                                     </div>
-                                    <div className="newsPanelBackground" style={{backgroundImage: `url(${article.urlToImage})`}} />
+                                    <div className="newsPanelBackground" style={{backgroundImage: `url(${this.replaceHttp(article.urlToImage)})`}} />
                                     <h4 className="newsTitle">{article.title}</h4>
                                     <p className="newsDescription">{article.description}</p>
                                 </a>

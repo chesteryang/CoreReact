@@ -7,6 +7,7 @@
     <IsPackable>false</IsPackable>
     <SpaRoot>clientapp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <UserSecretsId>a0124d47-1a42-4d47-b905-8fa19a53b087</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
