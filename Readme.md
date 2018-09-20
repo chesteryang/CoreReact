@@ -98,6 +98,18 @@
 33. complete chinook music store ordering.
 34. Update git repo author info
 
+35. useful command for Heroku deployment
+```
+dotnet publish -c Release
+docker build -t corereactapp bin\Release\netcoreapp2.1\publish\
+--local run
+docker run --rm -it -p 5000:80 corereactapp
 
-
+heroku login
+heroku container:login
+heroku apps:create corereactapp
+docker tag corereactapp registry.heroku.com/corereactapp/web
+docker push registry.heroku.com/corereactapp/web
+heroku container:release web --app=corereactapp
+```
 
