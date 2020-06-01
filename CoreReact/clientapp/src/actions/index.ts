@@ -22,7 +22,7 @@ export const getNews = (dispatch : Dispatch) => {
         }
     })
 
-    fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=adf0927cbd624a20abb1517d8b56114b')
+    fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=4f9333875c98436787fa163b2604664a')
     .then(res => res.json())
     .then(json => dispatch({
         type: GET_NEWS_COMPELED,
