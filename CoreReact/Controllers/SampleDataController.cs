@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using CoreReact.Northwind.model;
 using Microsoft.AspNetCore.Mvc;
+using NewsAPI;
+using NewsAPI.Models;
 #pragma warning disable 1591
 
 namespace CoreReact.Controllers
@@ -12,10 +15,12 @@ namespace CoreReact.Controllers
     public class SampleDataController : ControllerBase
     {
         private NorthwindContext _dbContext;
+        private readonly IHttpClientFactory _clientFactory;
 
-        public SampleDataController(NorthwindContext dbContext)
+        public SampleDataController(NorthwindContext dbContext, IHttpClientFactory clientFactory)
         {
             _dbContext = dbContext;
+            _clientFactory = clientFactory;
         }
         private static string[] Summaries = new[]
         {
@@ -38,6 +43,14 @@ namespace CoreReact.Controllers
         public IEnumerable<Customer> GetCustomers()
         {
             return _dbContext.Customer.ToList();
+        }
+
+        [HttpGet("[action]")]
+        public ArticlesResult News()
+        {
+            var newsApiClient = new NewsApiClient("4f9333875c98436787fa163b2604664a");
+            var topNews = new TopHeadlinesRequest { Country = NewsAPI.Constants.Countries.US};
+            return newsApiClient.GetTopHeadlines(topNews);
         }
 
         public class WeatherForecast
