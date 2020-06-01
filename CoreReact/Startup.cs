@@ -37,7 +37,7 @@ namespace CoreReact
 
             services.AddDbContext<NorthwindContext>();
             services.AddDbContext<ChinookContext>();
-
+            services.AddHttpClient();
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>
             {
