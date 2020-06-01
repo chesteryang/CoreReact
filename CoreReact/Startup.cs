@@ -29,31 +29,33 @@ namespace CoreReact
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
-            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-            .AddJsonOptions(options => {
-                var contractResolver = options.SerializerSettings.ContractResolver as DefaultContractResolver;
-                contractResolver.NamingStrategy.ProcessDictionaryKeys = true;
-            });
+                .AddMvcOptions(options => options.EnableEndpointRouting = false)
+            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+            //.AddJsonOptions(options => {
+            //    var contractResolver = opt .ContractResolver as DefaultContractResolver;
+            //    contractResolver.NamingStrategy.ProcessDictionaryKeys = true;
+            //});
 
             services.AddDbContext<NorthwindContext>();
             services.AddDbContext<ChinookContext>();
 
             // Register the Swagger generator, defining one or more Swagger documents
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info
-                {
-                    Title = "My API",
-                    Version = "v1",
-                    Description = "An ASP.NET Core Web API for react",
-                    Contact = new Contact { Name = "Chester Yang", Email = "", Url = "https://github.com/chesteryang" }
-                });
-                // Set the comments path for the Swagger JSON and UI.
-                var basePath = AppContext.BaseDirectory;
-                var xmlPath = Path.Combine(basePath, "CoreReact.xml");
-                c.EnableAnnotations();
-                c.IncludeXmlComments(xmlPath);
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1",  new Info
+            //    {
+            //        Title = "My API",
+            //        Version = "v1",
+            //        Description = "An ASP.NET Core Web API for react",
+            //        Contact = new Contact { Name = "Chester Yang", Email = "", Url = "https://github.com/chesteryang" }
+            //    });
+            //    // Set the comments path for the Swagger JSON and UI.
+            //    var basePath = AppContext.BaseDirectory;
+            //    var xmlPath = Path.Combine(basePath, "CoreReact.xml");
+            //    c.EnableAnnotations();
+            //    c.IncludeXmlComments(xmlPath);
+            //});
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -79,14 +81,14 @@ namespace CoreReact
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
+            //// Enable middleware to serve generated Swagger as a JSON endpoint.
+            //app.UseSwagger();
 
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API for react V1");
-            });
+            //// Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API for react V1");
+            //});
 
             app.UseMvc(routes =>
             {

@@ -1,17 +1,12 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
 
 namespace CoreReact.Chinook.model
 {
     public partial class ChinookContext : DbContext
     {
-        public static readonly LoggerFactory MyLoggerFactory
-            = new LoggerFactory(new[] { new ConsoleLoggerProvider((category, level)
-                => category == DbLoggerCategory.Database.Command.Name
-                   && level == LogLevel.Information, true) });
+        public static readonly ILoggerFactory MyLoggerFactory
+           = LoggerFactory.Create(builder => { builder.AddConsole(); });
         public virtual DbSet<Albums> Albums { get; set; }
         public virtual DbSet<Artists> Artists { get; set; }
         public virtual DbSet<Customers> Customers { get; set; }
