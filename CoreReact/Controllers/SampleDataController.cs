@@ -7,6 +7,7 @@ using CoreReact.Northwind.model;
 using Microsoft.AspNetCore.Mvc;
 using NewsAPI;
 using NewsAPI.Models;
+using Newtonsoft.Json;
 #pragma warning disable 1591
 
 namespace CoreReact.Controllers
@@ -49,8 +50,21 @@ namespace CoreReact.Controllers
         public ArticlesResult News()
         {
             var newsApiClient = new NewsApiClient("4f9333875c98436787fa163b2604664a");
-            var topNews = new TopHeadlinesRequest { Country = NewsAPI.Constants.Countries.US};
+            var topNews = new TopHeadlinesRequest { Country = NewsAPI.Constants.Countries.CA };
             return newsApiClient.GetTopHeadlines(topNews);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<List<Post>> Posts()
+        {
+            var client = _clientFactory.CreateClient();
+            var response = await client.SendAsync(new HttpRequestMessage { RequestUri = new Uri("https://jsonplaceholder.typicode.com/posts") });
+            if (response.IsSuccessStatusCode)
+            {
+                var r = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<Post>>(r);
+            }
+            return new List<Post>();
         }
 
         public class WeatherForecast
@@ -66,6 +80,14 @@ namespace CoreReact.Controllers
                     return 32 + (int)(TemperatureC / 0.5556);
                 }
             }
+        }
+
+        public class Post
+        {
+            public int UserId { get; set; }
+            public int Id { get; set; }
+            public string Title { get; set; }
+            public string Body { get; set; }
         }
     }
 }

@@ -19,7 +19,7 @@ const initialState: IState = {
     posts: []
 }
 
-const url = 'https://jsonplaceholder.typicode.com/posts';
+const url = '/api/SampleData/Posts';
 
 export class FetchJsonPlaceHolderData extends React.Component<any, IState>{
     constructor(props: any){
